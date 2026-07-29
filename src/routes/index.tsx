@@ -304,13 +304,18 @@ function Portfolio() {
   }, []);
 
   /* Projects filter */
-  const filters = ["All", "Java", "Python", "Automation"];
+  const filters = ["All", "Java", "Python", "Automation", "AI", "React"];
   const [filter, setFilter] = useState("All");
   const visibleProjects = useMemo(
     () =>
       filter === "All"
         ? PROJECTS
-        : PROJECTS.filter((p) => p.tech.some((t) => t.toLowerCase().includes(filter.toLowerCase())) || p.tag.toLowerCase().includes(filter.toLowerCase())),
+        : PROJECTS.filter(
+            (p) =>
+              p.tech.some((t) => t.toLowerCase().includes(filter.toLowerCase())) ||
+              p.tag.toLowerCase().includes(filter.toLowerCase()) ||
+              (filter.toLowerCase() === "ai" && p.title.toLowerCase().includes("ai")),
+          ),
     [filter],
   );
 
