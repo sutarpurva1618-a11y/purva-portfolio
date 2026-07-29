@@ -770,6 +770,30 @@ function Portfolio() {
                   </span>
                 ))}
               </div>
+              {(p.github || p.demo) && (
+                <div className="mt-4 flex flex-wrap gap-2 border-t border-border pt-4">
+                  {p.github && (
+                    <a
+                      href={p.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-1.5 text-xs font-medium transition-colors hover:bg-accent hover:text-foreground"
+                    >
+                      <Github className="h-3.5 w-3.5" /> GitHub
+                    </a>
+                  )}
+                  {p.demo && (
+                    <a
+                      href={p.demo}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-lg btn-gradient px-3 py-1.5 text-xs font-medium"
+                    >
+                      <ExternalLink className="h-3.5 w-3.5" /> Live Demo
+                    </a>
+                  )}
+                </div>
+              )}
             </article>
           ))}
           {/* Coming soon */}
