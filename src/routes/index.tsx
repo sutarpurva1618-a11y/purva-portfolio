@@ -202,7 +202,7 @@ const CONCEPTS = [
   "Postman",
 ];
 
-const PROJECTS = [
+const PROJECTS: Project[] = [
   {
     title: "Bank Management System",
     tag: "Desktop • Java",
