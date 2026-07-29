@@ -124,6 +124,18 @@ function useCounter(target: number, active: boolean, duration = 1400) {
   return v;
 }
 
+/* ---------- Types ---------- */
+interface Project {
+  title: string;
+  tag: string;
+  desc: string;
+  tech: string[];
+  features: string[];
+  icon: React.ComponentType<{ className?: string }>;
+  github?: string;
+  demo?: string;
+}
+
 /* ---------- Data ---------- */
 const NAV = [
   { id: "home", label: "Home" },
