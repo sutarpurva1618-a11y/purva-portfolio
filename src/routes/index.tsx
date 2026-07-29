@@ -242,7 +242,6 @@ const PROJECTS: Project[] = [
     tech: ["React", "TypeScript", "n8n", "Webhooks", "AI APIs"],
     features: ["Conversational AI", "API Integration", "Workflow Automation", "Real-Time Responses"],
     icon: Bot,
-    github: "https://github.com/sutarpurva1618-a11y",
   },
   {
     title: "AI Automation Suite using n8n",
@@ -251,7 +250,6 @@ const PROJECTS: Project[] = [
     tech: ["n8n", "Automation Workflows", "Webhooks", "APIs"],
     features: ["File Automation", "Data Processing", "Task Automation", "No-Code/Low-Code"],
     icon: Workflow,
-    github: "https://github.com/sutarpurva1618-a11y",
   },
   {
     title: "Personalized AI Poem Generator",
@@ -260,7 +258,6 @@ const PROJECTS: Project[] = [
     tech: ["React", "JavaScript", "AI", "Prompt Engineering"],
     features: ["Personalized Output", "Creative AI", "User Input Forms", "Prompt Engineering"],
     icon: BookOpen,
-    github: "https://github.com/sutarpurva1618-a11y",
   },
   {
     title: "Email Reply Automation using n8n",
@@ -269,7 +266,6 @@ const PROJECTS: Project[] = [
     tech: ["n8n", "AI", "Email APIs", "Automation"],
     features: ["Email Processing", "AI Replies", "Workflow Automation", "API Integration"],
     icon: Mail,
-    github: "https://github.com/sutarpurva1618-a11y",
   },
 ];
 
