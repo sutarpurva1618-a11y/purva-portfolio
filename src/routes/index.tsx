@@ -223,6 +223,42 @@ const PROJECTS = [
     features: ["Secure Login", "Workflow", "Analysis", "Reports"],
     icon: Workflow,
   },
+  {
+    title: "AI ChatGPT Clone Integrated with n8n",
+    tag: "AI • React",
+    desc: "Developed an AI-powered ChatGPT clone connected with n8n workflows using webhooks. The chatbot processes user queries through automated workflows and AI integrations.",
+    tech: ["React", "TypeScript", "n8n", "Webhooks", "AI APIs"],
+    features: ["Conversational AI", "API Integration", "Workflow Automation", "Real-Time Responses"],
+    icon: Bot,
+    github: "https://github.com/sutarpurva1618-a11y",
+  },
+  {
+    title: "AI Automation Suite using n8n",
+    tag: "Automation • n8n",
+    desc: "Created automation workflows using n8n for file manipulation, data processing, and task automation. The workflows can handle and modify files through automated pipelines.",
+    tech: ["n8n", "Automation Workflows", "Webhooks", "APIs"],
+    features: ["File Automation", "Data Processing", "Task Automation", "No-Code/Low-Code"],
+    icon: Workflow,
+    github: "https://github.com/sutarpurva1618-a11y",
+  },
+  {
+    title: "Personalized AI Poem Generator",
+    tag: "AI • React",
+    desc: "Built a creative AI application where users enter details such as their name and profession, and the system generates personalized poems based on the provided information.",
+    tech: ["React", "JavaScript", "AI", "Prompt Engineering"],
+    features: ["Personalized Output", "Creative AI", "User Input Forms", "Prompt Engineering"],
+    icon: BookOpen,
+    github: "https://github.com/sutarpurva1618-a11y",
+  },
+  {
+    title: "Email Reply Automation using n8n",
+    tag: "Automation • AI",
+    desc: "Developed an automated email response workflow that processes incoming emails and generates appropriate replies using AI-powered automation.",
+    tech: ["n8n", "AI", "Email APIs", "Automation"],
+    features: ["Email Processing", "AI Replies", "Workflow Automation", "API Integration"],
+    icon: Mail,
+    github: "https://github.com/sutarpurva1618-a11y",
+  },
 ];
 
 const SERVICES = [
