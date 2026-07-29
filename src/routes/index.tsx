@@ -124,6 +124,18 @@ function useCounter(target: number, active: boolean, duration = 1400) {
   return v;
 }
 
+/* ---------- Types ---------- */
+interface Project {
+  title: string;
+  tag: string;
+  desc: string;
+  tech: string[];
+  features: string[];
+  icon: React.ComponentType<{ className?: string }>;
+  github?: string;
+  demo?: string;
+}
+
 /* ---------- Data ---------- */
 const NAV = [
   { id: "home", label: "Home" },
@@ -190,7 +202,7 @@ const CONCEPTS = [
   "Postman",
 ];
 
-const PROJECTS = [
+const PROJECTS: Project[] = [
   {
     title: "Bank Management System",
     tag: "Desktop • Java",
@@ -222,6 +234,38 @@ const PROJECTS = [
     tech: ["n8n", "Java", "JDBC", "Oracle", "MySQL", "REST"],
     features: ["Secure Login", "Workflow", "Analysis", "Reports"],
     icon: Workflow,
+  },
+  {
+    title: "AI ChatGPT Clone Integrated with n8n",
+    tag: "AI • React",
+    desc: "Developed an AI-powered ChatGPT clone connected with n8n workflows using webhooks. The chatbot processes user queries through automated workflows and AI integrations.",
+    tech: ["React", "TypeScript", "n8n", "Webhooks", "AI APIs"],
+    features: ["Conversational AI", "API Integration", "Workflow Automation", "Real-Time Responses"],
+    icon: Bot,
+  },
+  {
+    title: "AI Automation Suite using n8n",
+    tag: "Automation • n8n",
+    desc: "Created automation workflows using n8n for file manipulation, data processing, and task automation. The workflows can handle and modify files through automated pipelines.",
+    tech: ["n8n", "Automation Workflows", "Webhooks", "APIs"],
+    features: ["File Automation", "Data Processing", "Task Automation", "No-Code/Low-Code"],
+    icon: Workflow,
+  },
+  {
+    title: "Personalized AI Poem Generator",
+    tag: "AI • React",
+    desc: "Built a creative AI application where users enter details such as their name and profession, and the system generates personalized poems based on the provided information.",
+    tech: ["React", "JavaScript", "AI", "Prompt Engineering"],
+    features: ["Personalized Output", "Creative AI", "User Input Forms", "Prompt Engineering"],
+    icon: BookOpen,
+  },
+  {
+    title: "Email Reply Automation using n8n",
+    tag: "Automation • AI",
+    desc: "Developed an automated email response workflow that processes incoming emails and generates appropriate replies using AI-powered automation.",
+    tech: ["n8n", "AI", "Email APIs", "Automation"],
+    features: ["Email Processing", "AI Replies", "Workflow Automation", "API Integration"],
+    icon: Mail,
   },
 ];
 
@@ -304,13 +348,18 @@ function Portfolio() {
   }, []);
 
   /* Projects filter */
-  const filters = ["All", "Java", "Python", "Automation"];
+  const filters = ["All", "Java", "Python", "Automation", "AI", "React"];
   const [filter, setFilter] = useState("All");
   const visibleProjects = useMemo(
     () =>
       filter === "All"
         ? PROJECTS
-        : PROJECTS.filter((p) => p.tech.some((t) => t.toLowerCase().includes(filter.toLowerCase())) || p.tag.toLowerCase().includes(filter.toLowerCase())),
+        : PROJECTS.filter(
+            (p) =>
+              p.tech.some((t) => t.toLowerCase().includes(filter.toLowerCase())) ||
+              p.tag.toLowerCase().includes(filter.toLowerCase()) ||
+              (filter.toLowerCase() === "ai" && p.title.toLowerCase().includes("ai")),
+          ),
     [filter],
   );
 
@@ -729,6 +778,30 @@ function Portfolio() {
                   </span>
                 ))}
               </div>
+              {(p.github || p.demo) && (
+                <div className="mt-4 flex flex-wrap gap-2 border-t border-border pt-4">
+                  {p.github && (
+                    <a
+                      href={p.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-1.5 text-xs font-medium transition-colors hover:bg-accent hover:text-foreground"
+                    >
+                      <Github className="h-3.5 w-3.5" /> GitHub
+                    </a>
+                  )}
+                  {p.demo && (
+                    <a
+                      href={p.demo}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-lg btn-gradient px-3 py-1.5 text-xs font-medium"
+                    >
+                      <ExternalLink className="h-3.5 w-3.5" /> Live Demo
+                    </a>
+                  )}
+                </div>
+              )}
             </article>
           ))}
           {/* Coming soon */}
