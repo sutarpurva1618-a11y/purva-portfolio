@@ -100,7 +100,7 @@ Display
 
 Hi, I'm
 
-# Sutar Purva
+# Purva Nitin Sutar
 
 Computer Engineering Student
 
