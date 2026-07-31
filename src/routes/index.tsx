@@ -630,37 +630,61 @@ function Portfolio() {
         </div>
       </Section>
 
-      {/* EDUCATION timeline */}
-      <Section id="education" eyebrow="Education" title="Academic journey">
-        <div className="relative mx-auto max-w-3xl pl-6 sm:pl-8">
-          <div
-            className="absolute left-2 top-2 bottom-2 w-px sm:left-3"
-            style={{ background: "var(--gradient-brand)" }}
-          />
-          {[
-            {
-              title: "B.E. Computer Engineering",
-              org: "ISBM College of Engineering · SPPU",
-              time: "Second Year · Pune, MH",
-              desc: "Core CS: OOP, DSA, DBMS, OS. Building projects across Java, Python, ML and Automation.",
-            },
-            {
-              title: "Higher Secondary Education",
-              org: "Maharashtra Board",
-              time: "Science Stream",
-              desc: "Foundation in Mathematics, Physics and early programming exposure.",
-            },
-          ].map((e, i) => (
-            <div key={i} className="relative mb-8 last:mb-0" data-reveal>
-              <span className="absolute -left-[3px] top-1 h-3 w-3 rounded-full btn-gradient sm:-left-1" />
-              <div className="rounded-2xl glass p-5">
-                <p className="text-xs font-mono text-muted-foreground">{e.time}</p>
-                <p className="mt-1 font-display text-lg font-semibold">{e.title}</p>
-                <p className="text-sm text-primary">{e.org}</p>
-                <p className="mt-2 text-sm text-muted-foreground">{e.desc}</p>
+      {/* EDUCATION — Academic Performance */}
+      <Section id="education" eyebrow="Academic Performance" title="Academic excellence">
+        <div className="mx-auto max-w-4xl">
+          <div className="rounded-3xl glass p-6 sm:p-10" data-reveal>
+            <div className="flex flex-col items-center gap-8 sm:flex-row sm:items-start">
+              {/* CGPA highlight */}
+              <div className="relative flex h-32 w-32 shrink-0 flex-col items-center justify-center rounded-full bg-gradient-to-br from-primary/10 to-brand-2/10 ring-[6px] ring-primary/20 sm:h-36 sm:w-36">
+                <TrendingUp className="h-6 w-6 text-primary" />
+                <span className="font-display text-5xl font-extrabold gradient-text sm:text-6xl">
+                  9.02
+                </span>
+                <span className="text-xs font-medium text-muted-foreground">/ 10</span>
+              </div>
+
+              {/* Details */}
+              <div className="flex-1 text-center sm:text-left">
+                <p className="font-display text-xl font-semibold sm:text-2xl">
+                  Bachelor of Engineering (B.E.) in Computer Engineering
+                </p>
+                <p className="mt-1 text-sm text-primary sm:text-base">
+                  ISBM College of Engineering, Pune · Savitribai Phule Pune University (SPPU)
+                </p>
+
+                {/* Semester cards */}
+                <div className="mt-6 grid grid-cols-2 gap-4">
+                  <div className="rounded-2xl border border-border bg-card/50 p-4 transition-transform hover:-translate-y-1">
+                    <BarChart3 className="mx-auto h-5 w-5 text-primary sm:mx-0" />
+                    <p className="mt-1 font-display text-2xl font-bold sm:text-3xl">8.95</p>
+                    <p className="text-xs text-muted-foreground">Semester I SGPA</p>
+                  </div>
+                  <div className="rounded-2xl border border-border bg-card/50 p-4 transition-transform hover:-translate-y-1">
+                    <BarChart3 className="mx-auto h-5 w-5 text-primary sm:mx-0" />
+                    <p className="mt-1 font-display text-2xl font-bold sm:text-3xl">9.09</p>
+                    <p className="text-xs text-muted-foreground">Semester II SGPA</p>
+                  </div>
+                </div>
+
+                {/* Credits progress */}
+                <div className="mt-6 rounded-2xl border border-border bg-card/50 p-4">
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="flex items-center gap-2 font-medium">
+                      <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                      Credits Earned
+                    </span>
+                    <span className="font-mono font-semibold text-emerald-500">44 / 44</span>
+                  </div>
+                  <div className="mt-3 h-2.5 overflow-hidden rounded-full bg-muted">
+                    <div
+                      className="h-full w-full rounded-full bg-gradient-to-r from-emerald-400 to-emerald-600"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </Section>
 
