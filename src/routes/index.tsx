@@ -30,6 +30,9 @@ import {
   Server,
   Workflow,
   Layers,
+  TrendingUp,
+  BarChart3,
+  Star,
 } from "lucide-react";
 import avatar from "@/assets/purva-avatar.jpg";
 
